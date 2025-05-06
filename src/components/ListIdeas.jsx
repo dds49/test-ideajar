@@ -8,7 +8,7 @@ const ListIdeas = ({ ideas, view, setView, text, setText }) => {
   //const [count, setCount] = useState(0);
   //const [ideas, setIdeas] = useState([]);
   // Try to get the jar.json file from the server
-  /*axios.get("http://ideajar.paranom.asia/api/v6/getjson.php").then(
+  /*axios.get("http://ideajar.paranom.asia/api/getjson.php").then(
     (response) => {
       setIdeas(response.data);
       setCount(ideas.length);
@@ -19,22 +19,37 @@ const ListIdeas = ({ ideas, view, setView, text, setText }) => {
     }
   );*/
   const count = ideas.length;
+
   const handleClick = (idea) => () => {
     setView(true);
     setText(idea.description);
-    //console.log("text = " + idea.description);
   };
 
-  if (!view) {
+  if (view) return <ViewIdea text={text} setView={setView} />;
+  else
     return (
       <>
         <div>
           <>
-            <div>
-              <h2 style={{ fontWeight: 400 }}>
-                There are {count} ideas in the Jar
-              </h2>
-            </div>
+            {count == 0 && (
+              <div>
+                <h2 style={{ fontWeight: 400 }}>The Jar is empty!</h2>
+              </div>
+            )}
+            {count == 1 && (
+              <div>
+                <h2 style={{ fontWeight: 400 }}>
+                  There's only 1 idea in the Jar
+                </h2>
+              </div>
+            )}
+            {count > 1 && (
+              <div>
+                <h2 style={{ fontWeight: 400 }}>
+                  There are {count} ideas in the Jar
+                </h2>
+              </div>
+            )}
             {ideas.map((idea, key) => (
               <div className="idea" key={key}>
                 <button className="question-btn" onClick={handleClick(idea)}>
@@ -46,6 +61,5 @@ const ListIdeas = ({ ideas, view, setView, text, setText }) => {
         </div>
       </>
     );
-  } else return <ViewIdea text={text} setView={setView} />;
 };
 export default ListIdeas;

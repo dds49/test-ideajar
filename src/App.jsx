@@ -11,17 +11,17 @@ import ViewIdea from "./components/ViewIdea";
 function App() {
   const [ideas, setIdeas] = useState([]);
   const [description, setDescription] = useState("");
+  // eslint-disable-next-line no-unused-vars
   const [count, setCount] = useState(0);
   const [view, setView] = useState(false);
   const [text, setText] = useState("");
 
   // Try to get the jar.json file from the server
-  axios.get("http://ideajar.paranom.asia/api/v6/getjson.php").then(
+  axios.get("http://ideajar.paranom.asia/api/getjson.php").then(
     (response) => {
       setIdeas(response.data);
       setCount(response.data.length);
-      console.log("count= " + count);
-      console.log(response.data);
+      //console.log("count= " + count);
     },
     (error) => {
       console.log(error);
@@ -40,13 +40,16 @@ function App() {
       };
       ideas.push(idea_obj);
       // Try to send the jar.json file to the server
-      axios.post("http://ideajar.paranom.asia/api/v6/postjson.php", ideas);
+      axios.post("http://ideajar.paranom.asia/api/postjson.php", ideas);
       setCount(ideas.length);
       setDescription("");
       //setLoading(false);
     }
   };
-  if (!view)
+
+  // RENDER
+  if (view) return <ViewIdea text={text} setView={setView} />;
+  else
     return (
       <>
         <div>
@@ -65,7 +68,7 @@ function App() {
         </div>
         <ListIdeas
           ideas={ideas}
-          viewIdea={view}
+          view={view}
           setView={setView}
           text={text}
           setText={setText}
@@ -86,6 +89,6 @@ function App() {
           visible={true}
         />
       </div>
-    );*/ else return <ViewIdea text={text} setView={setView} />;
+    );*/
 }
 export default App;
