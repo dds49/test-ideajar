@@ -9,7 +9,7 @@ function App() {
   const [count, setCount] = useState(0);
 
   const getJsonData = async () => {
-    const response = await fetch("/data/jar.json", {
+    const response = await fetch("./data/jar.json", {
       cache: "no-cache",
     });
     const data = await response.json();
