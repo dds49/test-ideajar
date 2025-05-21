@@ -1,5 +1,5 @@
 #root {
-  max-width: 360px;
+  max-width: 1080px;
   margin: auto;
   padding: 0;
   text-align: center;
@@ -79,31 +79,38 @@
 
 .idea {
   display: inline;
+  width: auto;
   font-size: 18px;
   color: rgb(43, 42, 41);
   text-decoration: none;
 }
 
-.idea-view {
-  margin-top: 80px;
-  display: flex;
-  font-size: 18px;
-  color: rgb(43, 42, 41);
-  text-decoration: none;
-}
 .form-label {
   font-size: 1rem;
   color: #000;
   margin: 0 0 0 0;
 }
 
-.question-btn {
+.idea-btn {
   display: inline;
-  width: 32px;
+  margin-bottom: 4px;
+  margin-right: 4px;
+  width: auto;
   padding: 8px;
-  background-color: #e9eae9;
+  background-color: #7e807e;
+  border: solid 1px white;
+  border-radius: 6px;
+}
+
+.idea-btn-transparent {
+  display: inline;
+  width: auto;
+  margin-bottom: 4px;
+  margin-right: 4px;
+  padding: 8px;
+  background-color: #7e807e;
   justify-content: center;
-  color: rgb(29, 28, 28);
+  color: transparent;
   border: solid 1px white;
   border-radius: 6px;
 }
