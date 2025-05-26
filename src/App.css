@@ -1,5 +1,5 @@
 #root {
-  max-width: 1080px;
+  max-width: 2560px;
   margin: auto;
   padding: 0;
   text-align: center;
@@ -97,7 +97,7 @@
   margin-right: 4px;
   width: auto;
   padding: 8px;
-  background-color: #7e807e;
+  background-color: #a1a1a1;
   border: solid 1px white;
   border-radius: 6px;
 }
@@ -108,9 +108,20 @@
   margin-bottom: 4px;
   margin-right: 4px;
   padding: 8px;
-  background-color: #7e807e;
+  background-color: #a1a2a1;
   justify-content: center;
   color: transparent;
   border: solid 1px white;
   border-radius: 6px;
+}
+.author {
+  font-size: 12px;
+  padding: 8px;
+  background-color: #a1a1a1;
+}
+
+.author-transparent {
+  font-size: 12px;
+  padding: 8px;
+  background-color: #7e807e;
 }

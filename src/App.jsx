@@ -18,7 +18,6 @@ function App() {
   };
 
   useEffect(() => {
-    console.log(count);
     getJsonData().then((data) => {
       setJsonData(data);
     });
@@ -54,6 +53,7 @@ function App() {
       <div>
         <h1>IDEAS JAR</h1>
       </div>
+
       <ListIdeas ideas={jsonData} text={text} setText={setText} />
     </>
   );

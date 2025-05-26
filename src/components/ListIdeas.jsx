@@ -49,6 +49,7 @@ const ListIdeas = ({ ideas }) => {
               {toggle[index] && (
                 <button className="idea-btn" onClick={() => clicked(index)}>
                   {idea.description}
+                  <span className="author">({idea.author})</span>
                 </button>
               )}
               {!toggle[index] && (
